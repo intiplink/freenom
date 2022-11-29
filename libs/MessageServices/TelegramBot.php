@@ -23,12 +23,12 @@ class TelegramBot extends MessageGateway
     protected $chatID;
 
     /**
-     * @var string 机器人令牌
+     * @var string bot token
      */
     protected $token;
 
     /**
-     * @var string Telegram 主机地址
+     * @var string Telegram host address
      */
     protected $host;
 
@@ -56,7 +56,7 @@ class TelegramBot extends MessageGateway
     }
 
     /**
-     * 获取 Telegram 主机地址
+     * Get Telegram Host Address
      *
      * @return string
      */
@@ -72,7 +72,7 @@ class TelegramBot extends MessageGateway
     }
 
     /**
-     * 生成域名状态 MarkDown 完整文本
+     * Generate the full text of the domain status MarkDown
      *
      * @param string $username
      * @param array $domainStatus
@@ -91,7 +91,7 @@ class TelegramBot extends MessageGateway
     }
 
     /**
-     * 获取 MarkDown 页脚
+     * Get Footer MarkDown
      *
      * @return string
      */
@@ -105,7 +105,7 @@ class TelegramBot extends MessageGateway
     }
 
     /**
-     * 生成域名状态 MarkDown 文本
+     * Generate domain name status MarkDown text
      *
      * @param array $domainStatus
      *
@@ -129,7 +129,7 @@ class TelegramBot extends MessageGateway
     }
 
     /**
-     * 生成域名续期结果 MarkDown 文本
+     * Generate domain renewal results MarkDown text
      *
      * @param string $username
      * @param array $renewalSuccessArr
@@ -161,7 +161,7 @@ class TelegramBot extends MessageGateway
     }
 
     /**
-     * 生成域名 MarkDown 文本
+     * Generate domain name MarkDown text
      *
      * @param array $domains
      *
@@ -207,18 +207,18 @@ class TelegramBot extends MessageGateway
     }
 
     /**
-     * 送信
+     * Sending message
      *
-     * @param string $content 支持 markdown 语法，但记得对非标记部分进行转义
+     * @param string $content Support markdown syntax, but remember to escape the non-markdown parts
      * @param string $subject
      * @param integer $type
      * @param array $data
-     * @param string|null $recipient 可单独指定 chat_id 参数
+     * @param string|null $recipient The chat_id parameter can be specified separately
      * @param mixed ...$params
      *
      * @desc
-     * 注意对 markdown 标记占用的字符进行转义，否则无法正确发送，根据官方说明，以下字符如果不想被 Telegram Bot 识别为 markdown 标记，
-     * 应转义后传入，官方说明如下：
+     * Be careful to escape the characters occupied by markdown tags, otherwise they will not be sent correctly. According to the official instructions, the following characters are not recognized by Telegram Bot as markdown tags if you do not want them to be
+     * should be escaped and passed in, the official instructions are as follows：
      * In all other places characters '_‘, ’*‘, ’[‘, ’]‘, ’(‘, ’)‘, ’~‘, ’`‘, ’>‘, ’#‘, ’+‘, ’-‘, ’=‘, ’|‘,
      * ’{‘, ’}‘, ’.‘, ’!‘ must be escaped with the preceding character ’\'.
      * 如果不转义则电报返回 400 错误
